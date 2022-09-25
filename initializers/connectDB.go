@@ -8,8 +8,8 @@ import (
 	"gorm.io/gorm"
 )
 
-// 2. Then, the connection object will be stored in the *gorm.DB struct which we can use 
-//    to perform CRUD operations on the PostgresQL database.
+//  2. Then, the connection object will be stored in the *gorm.DB struct which we can use
+//     to perform CRUD operations on the PostgresQL database.
 var DB *gorm.DB
 
 // 1. This function will be evoked in the init() to create a new connection pool with the PostgreSQL DB.
