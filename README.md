@@ -19,6 +19,10 @@ I. Setup Go-GORM-RESTful-API-Project:
                _ Run "docker-compose up -d": to start the Postgres Docker container in detached mode.
       c. Load and Validate the Environment Variables(app.env) with Golang Viper:
          - "go get github.com/spf13/viper"
+      d. Create a Utility/Helper Function to Connect the Golang app to PostgreSQL:
+         - "go get -u gorm.io/gorm"
+         - "go get gorm.io/driver/postgres"
+
 
 II. Template for environment variables ("app.env" file):
       POSTGRES_HOST = ...

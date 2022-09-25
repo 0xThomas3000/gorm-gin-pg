@@ -4,7 +4,7 @@ import (
 	"github.com/spf13/viper"
 )
 
-// Defined a struct to contain the allowed environment variables.
+// Defined a struct which contains the allowed environment variables.
 type Config struct {
 	DBHost         string `mapstructure:"POSTGRES_HOST"`
 	DBUserName     string `mapstructure:"POSTGRES_USER"`
