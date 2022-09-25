@@ -9,6 +9,7 @@ I. Setup Go-GORM-RESTful-API-Project:
    2. Setup the Go project:
       a. Init a new Golang project:
          - Initialize a Go module
+
       b. Create a Docker PostgreSQL Server (use Docker to run the Postgres server which could contain many databases):
          - Create a PostgreSQL Docker Container:
             * Create "docker-compose.yml" with configs:
@@ -17,11 +18,14 @@ I. Setup Go-GORM-RESTful-API-Project:
                   => Allow us to connect and access our running PostgreSQL server outside the container.
                + Create a named "volume" to prevent data loss when deleting the Postgres container.
                + Run "docker-compose up -d": to start the Postgres Docker container in detached mode.
+
       c. Load and Validate the Environment Variables(app.env) with Golang Viper:
          - "go get github.com/spf13/viper"
+
       d. Create a Utility/Helper Function to Connect the Golang app to PostgreSQL:
          - "go get -u gorm.io/gorm"
          - "go get gorm.io/driver/postgres"
+
       e. Data Modeling and Migration with GORM:
          - Build a database model with GORM.
          - Install the UUID OSSP plugin.
@@ -35,8 +39,19 @@ I. Setup Go-GORM-RESTful-API-Project:
             * List all the available extensions (to install "uuid-ossp"):
                + select * from pg_available_extensions;
                + CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
       f. Migrating the Schema with GORM:
          - A GORM feature to automatically migrate your schema to the DB, keep the Schema up to date.
+
+      g. Create the Golang Server with Gin Gonic:
+         - Connect to the Postgres DB and create a simple Golang server with the Gin web framework.
+         - Golang "air" package will hot-reload the Gin server upon every file change.
+         - Create "main.go" file
+         - "air" command: connect the app to the Postgres database and start the server on port 8000.
+
+      h. Testing the Golang API Server:
+         - Once the server is up and running, open any API testing tool and make a request to the "/api/healthchecker" endpoint.
+         - Alternatively, open http://localhost:8000/api/healthchecker in browser and we should see the JSON response sent by the Gin server.
 
 II. Template for environment variables ("app.env" file):
       POSTGRES_HOST = ...
