@@ -35,7 +35,8 @@ I. Setup Go-GORM-RESTful-API-Project:
             * List all the available extensions (to install "uuid-ossp"):
                + select * from pg_available_extensions;
                + CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-
+      f. Migrating the Schema with GORM:
+         - A GORM feature to automatically migrate your schema to the DB, keep the Schema up to date.
 
 II. Template for environment variables ("app.env" file):
       POSTGRES_HOST = ...
